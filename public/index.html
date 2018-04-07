@@ -387,8 +387,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
                 "Access-Control-Allow-Origin": "*"
             }
         }
-        $.ajax(settings2).done(function (response) {
-            reqsMovies = getTitles(response);
+        $.ajax(settings2).done(function (response2) {
+            reqsMovies = getTitles(response2);
             console.log(reqsMovies);
         });
 

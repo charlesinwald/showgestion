@@ -181,7 +181,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                 console.log(response);
                             $('#loading').hide();
                             var test1 = getTitles(test);
-                            console.log(test1);
+                            var test2 = concatTitlesUrl(test1);
+                            console.log(test2);
                         }).fail((function (jqXHR, textStatus, error) {
                                 console.log("ERROR");
                                 var settings = {
@@ -222,8 +223,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                         console.log(response);
                                         $('#loading').hide();
                                         var test1 = getTitles(test);
-                                        console.log(test1);
-                                    });
+                                        var test2 = concatTitlesUrl(test1);
+                                        console.log(test2);                                    });
                                 });
                             }
                         ));
@@ -293,7 +294,18 @@ document.getElementById('status').innerHTML = 'Please log ' +
 
 
     }
-
+    function concatTitlesUrl(titles) // this is an array
+    {
+        var i;
+        var retArray = new Array();
+        var ret = "";
+        for (i = 0; i < titles.length - 1; i++) {
+            retArray[i] = titles[i].replace(" ", "+").concat("%2C+");
+            ret = ret.concat(retArray[i]);
+        }
+        ret = ret.concat(titles[titles.length-1]);
+        return ret;
+    }
     // This function is called when someone finishes with the Login
     // Button.  See the onlogin handler attached to it in the sample
     // code below.

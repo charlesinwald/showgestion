@@ -124,6 +124,12 @@ document.getElementById('status').innerHTML = 'Please log ' +
         }, 1000);
     }
 
+    function tasteDivePrep() {
+        var test1 = getTitles(test);
+        var test2 = concatTitlesUrl(test1);
+        console.log(test2);
+    }
+
     function statusChangeCallback(response) {
         console.log('statusChangeCallback');
         console.log(response);
@@ -180,9 +186,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
                             if (response)
                                 console.log(response);
                             $('#loading').hide();
-                            var test1 = getTitles(test);
-                            var test2 = concatTitlesUrl(test1);
-                            console.log(test2);
+                            tasteDivePrep();
                         }).fail((function (jqXHR, textStatus, error) {
                                 console.log("ERROR");
                                 var settings = {
@@ -222,9 +226,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                     $.ajax(settings).done(function (response) {
                                         console.log(response);
                                         $('#loading').hide();
-                                        var test1 = getTitles(test);
-                                        var test2 = concatTitlesUrl(test1);
-                                        console.log(test2);                                    });
+                                        tasteDivePrep();
+                                    });
                                 });
                             }
                         ));
@@ -303,6 +306,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
             retArray[i] = titles[i].replace(" ", "+").concat("%2C+");
             ret = ret.concat(retArray[i]);
         }
+        titles[titles.length-1] = titles[titles.length-1].replace(" ", "+");
         ret = ret.concat(titles[titles.length-1]);
         return ret;
     }

@@ -195,7 +195,26 @@ document.getElementById('status').innerHTML = 'Please log ' +
 
                                 $.ajax(settings).done(function (response) {
                                     console.log(response);
-
+                                    data = response.token;
+                                    settings = {
+                                        "async": true,
+                                        "crossDomain": true,
+                                        "url": "https://cors-anywhere.herokuapp.com/https://api.applymagicsauce.com/like_ids?interpretations=true",
+                                        "method": "POST",
+                                        "headers": {
+                                            "X-Auth-Token": token,
+                                            "Content-type": "application/json",
+                                            "Accept": "application/json",
+                                            "origin": "",
+                                            "Cache-Control": "no-cache",
+                                            "Access-Control-Allow-Origin" : "*",
+                                            "Postman-Token": "1a2bd93e-20e2-425d-97a6-6b9628067848"
+                                        },
+                                        "data": data
+                                    }
+                                });
+                                $.ajax(settings).done(function (response) {
+                                    console.log(response);
                                 });
                             }
                         ));

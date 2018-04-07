@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.get('/magic`', function (req, res) {
+app.get('/magic', function (req, res) {
     var request = require("request");
 
     var options = { method: 'POST',

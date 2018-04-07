@@ -128,6 +128,19 @@ document.getElementById('status').innerHTML = 'Please log ' +
         $('.fb-login-button').hide();
         $('#logoutButton').show();
         scrollDown();
+        FB.api(
+            '/me',
+            'GET',
+            {"fields":"id,name,likes.limit(100)"},
+            function(response) {
+                if (response.likes != null) {
+                    console.log("WE GOT THE LIKES");
+                }
+                else {
+                    console.log("fuck this");
+                }
+            }
+        );
     }
 
     // This function is called when someone finishes with the Login

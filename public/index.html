@@ -79,11 +79,14 @@ document.getElementById('status').innerHTML = 'Please log ' +
         <div class="container">
             <h1 class="masthead-heading mb-0">Showgestion</h1>
             <h2 class="masthead-subheading mb-0">You Like It. We Show it.</h2>
-            <a href="#" class="btn btn-primary btn-primarybtn-xl rounded-pill mt-5" style="display:none;" id="logoutButton" onclick="FB.logout(function(response) {
+            <a href="#" class="btn btn-primary btn-primarybtn-xl rounded-pill mt-5" style="display:none;"
+               id="logoutButton" onclick="FB.logout(function(response) {
   // user is now logged out
+  conosle.log('logged out');
 });">Log Out</a>
             <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with"
-                 data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onlogin="checkLoginState();"></div>
+                 data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"
+                 onlogin="checkLoginState();"></div>
 
         </div>
     </div>

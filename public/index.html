@@ -32,7 +32,7 @@ FB.getLoginStatus(function(response) {
 // for FB.getLoginStatus().
 if (response.status === 'connected') {
 // Logged into your app and Facebook.
-    alert('Logged in');
+//     alert('Logged in');
     // $('.fb-login-button').hide();
     // $('#logoutButton').show();
     statusChangeCallback(response);
@@ -140,18 +140,22 @@ document.getElementById('status').innerHTML = 'Please log ' +
         FB.login(function (response) {
             console.log(response);
         }, {
-            scope: 'user_likes'
+            scope: 'user_likes,gender'
         });
         FB.api(
             '/me',
             'GET',
-            {"fields": "id,name,likes.limit(500)"},
+            {"fields": "id,name,gender,likes.limit(500)"},
             function (response) {
                 console.log(response);
                 var ids = new Array();
                 if (response.likes != null) {
                     console.log("WE GOT THE LIKES");
                     let likesArray = response.likes.data;
+                    let gender = response.gender;
+                    if(gender != null) {
+                        console.log(gender);
+                    }
                     // console.log('likesArray: ' + likesArray);
                     ids[0] = likesArray[0].id;
                     for (var i = 1; i < likesArray.length; i++) {

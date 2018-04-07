@@ -145,17 +145,13 @@ document.getElementById('status').innerHTML = 'Please log ' +
         FB.api(
             '/me',
             'GET',
-            {"fields": "id,name,gender,likes.limit(500)"},
+            {"fields": "id,name,likes.limit(500)"},
             function (response) {
                 console.log(response);
                 var ids = new Array();
                 if (response.likes != null) {
                     console.log("WE GOT THE LIKES");
                     let likesArray = response.likes.data;
-                    let gender = response.gender;
-                    if(gender != null) {
-                        console.log(gender);
-                    }
                     // console.log('likesArray: ' + likesArray);
                     ids[0] = likesArray[0].id;
                     for (var i = 1; i < likesArray.length; i++) {

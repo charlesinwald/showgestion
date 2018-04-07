@@ -19,24 +19,24 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.get('/magic`', function (req, res) {
-    var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://api.applymagicsauce.com/like_ids?interpretations=true",
-        "method": "POST",
-        "headers": {
-            "X-Auth-Token": "7nbe03d055jq8pp175b6amgsaa",
-            "Content-type": "application/json",
-            "Accept": "application/json",
-            "Cache-Control": "no-cache",
-            "Postman-Token": "c84f786f-4009-4aa3-b9ac-d47e05efab98"
-        },
-        "data": "[\"302383559805193\", \"6049803276\", \"18510635068\", \"47923519017\", \"35649991492\", \"185019191542371\", \"313227042137369\", \"878737018959036\", \"523598997680162\", \"199617896754080\", \"117533210756\", \"112584912087017\", \"98102468683\"]"
-    }
+    var request = require("request");
 
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-        res.send(response);
+    var options = { method: 'POST',
+        url: 'https://api.applymagicsauce.com/like_ids',
+        qs: { interpretations: 'true' },
+        headers:
+            { 'Postman-Token': '5493c7cb-612d-4560-ba88-dea48585aa48',
+                'Cache-Control': 'no-cache',
+                Accept: 'application/json',
+                'Content-type': 'application/json',
+                'X-Auth-Token': '7nbe03d055jq8pp175b6amgsaa' },
+        body: '["302383559805193", "6049803276", "18510635068", "47923519017", "35649991492", "185019191542371", "313227042137369", "878737018959036", "523598997680162", "199617896754080", "117533210756", "112584912087017", "98102468683"]' };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+
+        console.log(body);
+        res.send(body);
     });
 })
 

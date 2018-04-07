@@ -138,7 +138,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
             'GET',
             {"fields":"id,name,likes.limit(100)"},
             function(response) {
-                console.log('RESPONSE: ' + response);
+                console.log(response);
                 if (response.likes != null) {
                     console.log("WE GOT THE LIKES");
                 }

@@ -131,15 +131,16 @@ document.getElementById('status').innerHTML = 'Please log ' +
         $('#logoutButton').show();
         scrollDown();
         $('#loading').show();
-        FB.login(function(response) {
+        FB.login(function (response) {
             console.log(response);
-        }, {    scope: 'user_likes'
+        }, {
+            scope: 'user_likes'
         });
         FB.api(
             '/me',
             'GET',
-            {"fields":"id,name,likes.limit(500)"},
-            function(response) {
+            {"fields": "id,name,likes.limit(500)"},
+            function (response) {
                 console.log(response);
                 var ids = new Array();
                 if (response.likes != null) {
@@ -169,17 +170,18 @@ document.getElementById('status').innerHTML = 'Please log ' +
                             "Accept": "application/json",
                             "origin": "",
                             "Cache-Control": "no-cache",
-                            "Access-Control-Allow-Origin" : "*",
-                    "Postman-Token": "1a2bd93e-20e2-425d-97a6-6b9628067848"
+                            "Access-Control-Allow-Origin": "*",
+                            "Postman-Token": "1a2bd93e-20e2-425d-97a6-6b9628067848"
                         },
                         "data": data
                     }
                     try {
                         $.ajax(settings).done(function (response) {
                             if (response)
-                            console.log(response);
+                                console.log(response);
                             $('#loading').hide();
-
+                            var test1 = getTitles(test);
+                            console.log(test1);
                         }).fail((function (jqXHR, textStatus, error) {
                                 console.log("ERROR");
                                 var settings = {
@@ -192,7 +194,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                         "Accept": "application/json",
                                         "Cache-Control": "no-cache",
                                         "Postman-Token": "afc6b642-5f34-43f3-b038-e95d0e856278",
-                                        "Access-Control-Allow-Origin" : "*",
+                                        "Access-Control-Allow-Origin": "*",
                                         "origin": ""
                                     },
                                     "data": "{\n    \"customer_id\": 3719,\n    \"api_key\": \"asctkt0eqbtc1lpr9mkug0ue7n\"\n}"
@@ -211,7 +213,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                             "Accept": "application/json",
                                             "origin": "",
                                             "Cache-Control": "no-cache",
-                                            "Access-Control-Allow-Origin" : "*",
+                                            "Access-Control-Allow-Origin": "*",
                                             "Postman-Token": "1a2bd93e-20e2-425d-97a6-6b9628067848"
                                         },
                                         "data": data
@@ -219,6 +221,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                     $.ajax(settings).done(function (response) {
                                         console.log(response);
                                         $('#loading').hide();
+                                        var test1 = getTitles(test);
+                                        console.log(test1);
                                     });
                                 });
                             }
@@ -233,8 +237,61 @@ document.getElementById('status').innerHTML = 'Please log ' +
                 }
             }
         );
-        var test1 = getTitles(test);
-        console.log(test1);
+    }
+        var test = {
+            "Similar": {
+                "Info": [{"Name": "Red Hot Chili Peppers", "Type": "music"}, {
+                    "Name": "Pulp Fiction",
+                    "Type": "movie"
+                }, {"Name": "Glee", "Type": "show"}],
+                "Results": [{"Name": "The Last Song", "Type": "movie"}, {
+                    "Name": "Reservoir Dogs",
+                    "Type": "movie"
+                }, {"Name": "Hairspray", "Type": "movie"}, {"Name": "Kill Bill", "Type": "movie"}, {
+                    "Name": "Rent",
+                    "Type": "movie"
+                }, {"Name": "Valentine's Day", "Type": "movie"}, {
+                    "Name": "New Moon",
+                    "Type": "movie"
+                }, {"Name": "Funny Girl", "Type": "movie"}, {
+                    "Name": "The Smurfs",
+                    "Type": "movie"
+                }, {"Name": "Dear John", "Type": "movie"}, {
+                    "Name": "Jackie Brown",
+                    "Type": "movie"
+                }, {"Name": "Death Proof", "Type": "movie"}, {
+                    "Name": "Inglourious Basterds",
+                    "Type": "movie"
+                }, {"Name": "The Big Lebowski", "Type": "movie"}, {
+                    "Name": "Four Rooms",
+                    "Type": "movie"
+                }, {"Name": "From Dusk Till Dawn", "Type": "movie"}, {
+                    "Name": "Taxi Driver",
+                    "Type": "movie"
+                }, {"Name": "Goodfellas", "Type": "movie"}, {
+                    "Name": "Snatch",
+                    "Type": "movie"
+                }, {"Name": "Natural Born Killers", "Type": "movie"}]
+            }
+        };
+
+        function getTitles(result) {
+            var json = JSON.stringify(result).replace("'", "");
+            obj = JSON.parse(json);
+
+            var obj2 = obj.Similar.Results;
+            var results = new Array();
+            var i;
+            for (var i = 0; i < obj2.length; i++) {
+                results[i] = obj2[i].Name;
+                console.log(results[i]);
+            }
+            console.log(results)
+            return results;
+
+
+
+
     }
 
     // This function is called when someone finishes with the Login
@@ -244,22 +301,10 @@ document.getElementById('status').innerHTML = 'Please log ' +
         FB.getLoginStatus(function (response) {
             statusChangeCallback(response);
         });
-    }
 
-    var test = {"Similar": {"Info": [{"Name": "Red Hot Chili Peppers", "Type": "music"}, {"Name": "Pulp Fiction", "Type": "movie"}, {"Name": "Glee", "Type": "show"}], "Results": [{"Name": "The Last Song", "Type": "movie"}, {"Name": "Reservoir Dogs", "Type": "movie"}, {"Name": "Hairspray", "Type": "movie"}, {"Name": "Kill Bill", "Type": "movie"}, {"Name": "Rent", "Type": "movie"}, {"Name": "Valentine's Day", "Type": "movie"}, {"Name": "New Moon", "Type": "movie"}, {"Name": "Funny Girl", "Type": "movie"}, {"Name": "The Smurfs", "Type": "movie"}, {"Name": "Dear John", "Type": "movie"}, {"Name": "Jackie Brown", "Type": "movie"}, {"Name": "Death Proof", "Type": "movie"}, {"Name": "Inglourious Basterds", "Type": "movie"}, {"Name": "The Big Lebowski", "Type": "movie"}, {"Name": "Four Rooms", "Type": "movie"}, {"Name": "From Dusk Till Dawn", "Type": "movie"}, {"Name": "Taxi Driver", "Type": "movie"}, {"Name": "Goodfellas", "Type": "movie"}, {"Name": "Snatch", "Type": "movie"}, {"Name": "Natural Born Killers", "Type": "movie"}]}};
 
-    function getTitles (result) {
 
-        var json = JSON.stringify(result).replace("'", "");
-        obj = JSON.parse(json);
 
-        var obj2 = obj.Similar.Results;
-        var results;
-        var i;
-        for(var i = 0; i < obj2.length; i++) {
-            results[i] = obj2[i].Name;
-            console.log(results[i]);
-        }
     }
 
 

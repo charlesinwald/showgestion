@@ -130,9 +130,9 @@ document.getElementById('status').innerHTML = 'Please log ' +
         $('#logoutButton').show();
         scrollDown();
         FB.login(function(response) {
-            console.log("LOGIN REACHED");
             console.log(response);
-        }, {scope: 'email'});
+        }, {    scope: 'user_likes'
+        });
         FB.api(
             '/me',
             'GET',

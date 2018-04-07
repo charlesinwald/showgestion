@@ -22,9 +22,9 @@ app.get('/magic', function (req, res) {
     var request = require("request");
 
     var options = { method: 'POST',
-        url: 'https://api.applymagicsauce.com/like_ids',
+        url: 'https://cors-anywhere.herokuapp.com/https://api.applymagicsauce.com/like_ids',
         headers:
-            { 
+            {
                 'Cache-Control': 'no-cache',
                 Accept: 'application/json',
                 'Content-type': 'application/json',
@@ -33,10 +33,9 @@ app.get('/magic', function (req, res) {
 
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
-
         console.log(body);
-        res.send(body);
     });
+    res.send("hi!");
 
 })
 

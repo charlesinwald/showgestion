@@ -225,6 +225,9 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                     $.ajax(settings).done(function (response) {
                                         console.log(response);
                                         $('#loading').hide();
+                                        var gender = response.predictions.Female.value;
+                                        console.log(gender)
+
                                         tasteDivePrep();
                                     });
                                 });

@@ -423,12 +423,12 @@ document.getElementById('status').innerHTML = 'Please log ' +
         $.ajax(settings).done(function (response) {
             reqsTV = getTitles(response);
             console.log(reqsTV);
-            reqsTV.forEach(appendBoii())
+            reqsTV.forEach(appendBoii());
 
             function appendBoii(elementBoii) {
                 $('#showsList').append('<div>' + elementBoii + '</div>');
             }
-            
+
 
             $('#showsList').show();
             $('#showsList').text(reqsTV);

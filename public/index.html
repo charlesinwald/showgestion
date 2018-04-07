@@ -423,6 +423,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
         $.ajax(settings).done(function (response) {
             reqsTV = getTitles(response);
             console.log(reqsTV);
+            console.log("TYPEOF: " + typeof reqsTV);
             $('#showsList').show();
             $('#showsList').text(reqsTV);
 

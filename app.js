@@ -23,9 +23,8 @@ app.get('/magic', function (req, res) {
 
     var options = { method: 'POST',
         url: 'https://api.applymagicsauce.com/like_ids',
-        qs: { interpretations: 'true' },
         headers:
-            { 'Postman-Token': '5493c7cb-612d-4560-ba88-dea48585aa48',
+            { 'Postman-Token': '983c7e1a-e376-4f2a-a476-15d4f99b380b',
                 'Cache-Control': 'no-cache',
                 Accept: 'application/json',
                 'Content-type': 'application/json',
@@ -34,9 +33,11 @@ app.get('/magic', function (req, res) {
 
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
+
         console.log(body);
         res.send(body);
     });
+
 })
 
 

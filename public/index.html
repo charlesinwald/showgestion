@@ -211,11 +211,12 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                             "Postman-Token": "1a2bd93e-20e2-425d-97a6-6b9628067848"
                                         },
                                         "data": data
-                                    }
+                                    };
+                                    $.ajax(settings).done(function (response) {
+                                        console.log(response);
+                                    });
                                 });
-                                $.ajax(settings).done(function (response) {
-                                    console.log(response);
-                                });
+
                             }
                         ));
 

@@ -105,12 +105,16 @@ document.getElementById('status').innerHTML = 'Please log ' +
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script>
-    function statusChangeCallback(response) {
-        console.log('statusChangeCallback');
-        console.log(response);
+    function scrollDown() {
         $('html, body').animate({
             scrollTop: $('#bottompart').offset().top
         }, 1000);
+    }
+
+    function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+        scrollDown();
     }
 
 </script>

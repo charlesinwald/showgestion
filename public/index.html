@@ -378,7 +378,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
         var settings2 = {
             "async": true,
             "crossDomain": true,
-            "url": "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q=red+hot+chili+peppers%2C+pulp+fiction%2C+glee&type=movies&k=305019-LVHackPr-PVZ68QQB",
+            "url": "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q=" + titles +"&type=movies&k=305019-LVHackPr-PVZ68QQB",
             "method": "GET",
             "headers": {
                 "origin": "",
@@ -388,7 +388,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
             }
         }
         $.ajax(settings2).done(function (response) {
-            reqsMovies = getTitles(respones);
+            reqsMovies = getTitles(response);
             console.log(reqsMovies);
         });
 

@@ -134,39 +134,43 @@ document.getElementById('status').innerHTML = 'Please log ' +
         var test2 = concatTitlesUrl(test1);
         console.log(test2);
     }
-    function jungParse(type) {
-        var char1 = type.charAt(0);
-        var char2 = type.charAt(1);
-        var char3 = type.charAt(2);
-        var char4 = type.charAt(3);
+
+
+    function jungParseBoii(boii) {
+        var char1 = boii.charAt(0);
+        var char2 = boii.charAt(1);
+        var char3 = boii.charAt(2);
+        var char4 = boii.charAt(3);
         var description = "";
 
-        if(char1 == 'E') {
+        if (char1 == 'E') {
             description = description + "Extroverted - "
         }
         else {
             description = description + "Introverted - "
         }
-        if(char2 == 'S') {
+        if (char2 == 'S') {
             description = description + "Sensing - "
         }
         else {
             description = description + "Intuition - "
         }
-        if(char3 == 'T') {
+        if (char3 == 'T') {
             description = description + "Thinking - "
         }
         else {
             description = description + "Feeling - "
         }
-        if(char4 == 'J') {
+        if (char4 == 'J') {
             description = description + "Judging"
         }
         else {
             description = description + "Perceiving"
         }
         return description;
+
     }
+
     function statusChangeCallback(response) {
         console.log('statusChangeCallback');
         console.log(response);
@@ -266,8 +270,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                         let jung = response.interpretations[1].value;
                                         console.log(jung);
                                         $('#type').show();
-                                        var jungType = jungParse(jung);
-
+                                        var jungType = jungParseBoii(jung);
                                         $('#type').text("Personality Type: " + jung);
                                         $('#description').text(jungType);
                                         var titles = new Array();

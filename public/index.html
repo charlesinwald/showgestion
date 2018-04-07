@@ -361,10 +361,11 @@ document.getElementById('status').innerHTML = 'Please log ' +
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://tastedive.com/api/similar?q=" + titles + "&type=shows&k=305019-LVHackPr-PVZ68QQB",
+            "url": "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q=" + titles + "&type=shows&k=305019-LVHackPr-PVZ68QQB",
             "method": "GET",
             "headers": {
                 "Cache-Control": "no-cache",
+                "origin": "",
                 "Postman-Token": "47ec2f56-f978-4cc5-abfc-5cbd3cfc834e",
                 "Access-Control-Allow-Origin": "*"
             }
@@ -377,9 +378,10 @@ document.getElementById('status').innerHTML = 'Please log ' +
         var settings2 = {
             "async": true,
             "crossDomain": true,
-            "url": "https://tastedive.com/api/similar?q=red+hot+chili+peppers%2C+pulp+fiction%2C+glee&type=movies&k=305019-LVHackPr-PVZ68QQB",
+            "url": "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q=red+hot+chili+peppers%2C+pulp+fiction%2C+glee&type=movies&k=305019-LVHackPr-PVZ68QQB",
             "method": "GET",
             "headers": {
+                "origin": "",
                 "Cache-Control": "no-cache",
                 "Postman-Token": "ee51aede-7c50-49ce-b13a-190839ef8cdb",
                 "Access-Control-Allow-Origin": "*"

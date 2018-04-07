@@ -248,7 +248,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
 
     var test = {"Similar": {"Info": [{"Name": "Red Hot Chili Peppers", "Type": "music"}, {"Name": "Pulp Fiction", "Type": "movie"}, {"Name": "Glee", "Type": "show"}], "Results": [{"Name": "The Last Song", "Type": "movie"}, {"Name": "Reservoir Dogs", "Type": "movie"}, {"Name": "Hairspray", "Type": "movie"}, {"Name": "Kill Bill", "Type": "movie"}, {"Name": "Rent", "Type": "movie"}, {"Name": "Valentine's Day", "Type": "movie"}, {"Name": "New Moon", "Type": "movie"}, {"Name": "Funny Girl", "Type": "movie"}, {"Name": "The Smurfs", "Type": "movie"}, {"Name": "Dear John", "Type": "movie"}, {"Name": "Jackie Brown", "Type": "movie"}, {"Name": "Death Proof", "Type": "movie"}, {"Name": "Inglourious Basterds", "Type": "movie"}, {"Name": "The Big Lebowski", "Type": "movie"}, {"Name": "Four Rooms", "Type": "movie"}, {"Name": "From Dusk Till Dawn", "Type": "movie"}, {"Name": "Taxi Driver", "Type": "movie"}, {"Name": "Goodfellas", "Type": "movie"}, {"Name": "Snatch", "Type": "movie"}, {"Name": "Natural Born Killers", "Type": "movie"}]}};
 
-    function getTitles (var result) {
+    function getTitles (result) {
 
         var json = JSON.stringify(result).replace("'", "");
         obj = JSON.parse(json);

@@ -303,10 +303,10 @@ document.getElementById('status').innerHTML = 'Please log ' +
         var retArray = new Array();
         var ret = "";
         for (i = 0; i < titles.length - 1; i++) {
-            retArray[i] = titles[i].replace(" ", "+").concat("%2C+");
+            retArray[i] = titles[i].split(' ').join('+').concat("%2C+");
             ret = ret.concat(retArray[i]);
         }
-        titles[titles.length-1] = titles[titles.length-1].replace(" ", "+");
+        titles[titles.length-1] = titles[titles.length-1].split(' ').join('+');
         ret = ret.concat(titles[titles.length-1]);
         return ret;
     }

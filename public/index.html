@@ -101,6 +101,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
 
 <section>
     <div class="container" id="bottompart">
+        <div class="loader" id="loading" style="visibility: hidden"></div>
 
     </div>
 </section>
@@ -129,6 +130,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
         $('.fb-login-button').hide();
         $('#logoutButton').show();
         scrollDown();
+        $('#loading').show();
         FB.login(function(response) {
             console.log(response);
         }, {    scope: 'user_likes'
@@ -176,6 +178,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
                         $.ajax(settings).done(function (response) {
                             if (response)
                             console.log(response);
+                            $('#loading').hide();
+
                         }).fail((function (jqXHR, textStatus, error) {
                                 console.log("ERROR");
                                 var settings = {
@@ -214,6 +218,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                     };
                                     $.ajax(settings).done(function (response) {
                                         console.log(response);
+                                        $('#loading').hide();
                                     });
                                 });
                             }
@@ -224,7 +229,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
                     }
                 }
                 else {
-                    console.log("fuck this");
+                    console.log("f@$k this");
                 }
             }
         );

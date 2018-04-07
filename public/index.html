@@ -134,7 +134,39 @@ document.getElementById('status').innerHTML = 'Please log ' +
         var test2 = concatTitlesUrl(test1);
         console.log(test2);
     }
+    function jungParse(type) {
+        var char1 = type.charAt(0);
+        var char2 = type.charAt(1);
+        var char3 = type.charAt(2);
+        var char4 = type.charAt(3);
+        var description = "";
 
+        if(char1 == 'E') {
+            description = description + "Extroverted - "
+        }
+        else {
+            description = description + "Introverted - "
+        }
+        if(char2 == 'S') {
+            description = description + "Sensing - "
+        }
+        else {
+            description = description + "Intuition - "
+        }
+        if(char3 == 'T') {
+            description = description + "Thinking - "
+        }
+        else {
+            description = description + "Feeling - "
+        }
+        if(char4 == 'J') {
+            description = description + "Judging"
+        }
+        else {
+            description = description + "Perceiving"
+        }
+        return description;
+    }
     function statusChangeCallback(response) {
         console.log('statusChangeCallback');
         console.log(response);
@@ -433,39 +465,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
         FB.getLoginStatus(function (response) {
             statusChangeCallback(response);
         });
-    function jungParse(type) {
-        var char1 = type.charAt(0);
-        var char2 = type.charAt(1);
-        var char3 = type.charAt(2);
-        var char4 = type.charAt(3);
-        var description = "";
 
-        if(char1 == 'E') {
-            description = description + "Extroverted - "
-        }
-        else {
-            description = description + "Introverted - "
-        }
-        if(char2 == 'S') {
-            description = description + "Sensing - "
-        }
-        else {
-            description = description + "Intuition - "
-        }
-        if(char3 == 'T') {
-            description = description + "Thinking - "
-        }
-        else {
-            description = description + "Feeling - "
-        }
-        if(char4 == 'J') {
-            description = description + "Judging"
-        }
-        else {
-            description = description + "Perceiving"
-        }
-        return description;
-    }
 
     }
 

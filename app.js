@@ -29,12 +29,11 @@ app.get('/magic', function (req, res) {
                 'Cache-Control': 'no-cache',
                 Accept: 'application/json',
                 'Content-type': 'application/json',
-                'X-Auth-Token': '7nbe03d055jq8pp175b6amgsaa' },
+                'X-Auth-Token': 'sn0ed1isvb0768t9u0koh5vm29' },
         body: '["302383559805193", "6049803276", "18510635068", "47923519017", "35649991492", "185019191542371", "313227042137369", "878737018959036", "523598997680162", "199617896754080", "117533210756", "112584912087017", "98102468683"]' };
 
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
-
         console.log(body);
         res.send(body);
     });

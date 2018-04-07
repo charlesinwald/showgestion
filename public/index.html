@@ -104,6 +104,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
         <div class="loader" id="loading" style="display: none"></div>
 
         <h1 style="display: none" id="type"></h1>
+        <h1 style="display: none" id="description"></h1>
         <h2>Personalized TV Show Suggestions</h2>
         <h3 style="display: none" id="showsList"></h3>
 
@@ -233,7 +234,10 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                         let jung = response.interpretations[1].value;
                                         console.log(jung);
                                         $('#type').show();
+                                        var jungType = jungParse(jung);
+
                                         $('#type').text("Personality Type: " + jung);
+                                        $('#description').text(jungType);
                                         var titles = new Array();
                                         switch (jung) {
                                             case "ENFJ" :
@@ -429,7 +433,39 @@ document.getElementById('status').innerHTML = 'Please log ' +
         FB.getLoginStatus(function (response) {
             statusChangeCallback(response);
         });
+    function jungParse(type) {
+        var char1 = type.charAt(0);
+        var char2 = type.charAt(1);
+        var char3 = type.charAt(2);
+        var char4 = type.charAt(3);
+        var description = "";
 
+        if(char1 == 'E') {
+            description = description + "Extroverted - "
+        }
+        else {
+            description = description + "Introverted - "
+        }
+        if(char2 == 'S') {
+            description = description + "Sensing - "
+        }
+        else {
+            description = description + "Intuition - "
+        }
+        if(char3 == 'T') {
+            description = description + "Thinking - "
+        }
+        else {
+            description = description + "Feeling - "
+        }
+        if(char4 == 'J') {
+            description = description + "Judging"
+        }
+        else {
+            description = description + "Perceiving"
+        }
+        return description;
+    }
 
     }
 

@@ -426,11 +426,9 @@ document.getElementById('status').innerHTML = 'Please log ' +
             console.log(reqsTV.length);
             for(var i = 0; i < reqsTV.length; i++) {
                 console.log("Every time boii");
-                $('#showsList').append('<div>' + reqsTV[i] + '</div>');
+                $('#showsList').append('<div class="showDiv">' + reqsTV[i] + '</div>');
             }
             $('#showsList').show();
-            // $('#showsList').text(reqsTV);
-
         });
 
         // var settings2 = {

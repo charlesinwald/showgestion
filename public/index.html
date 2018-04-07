@@ -104,8 +104,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
         <div class="loader" id="loading" style="display: none"></div>
 
         <h1 style="display: none" id="type"></h1>
-        <h2>h2 test</h2>
-        <h3>h3 test</h3>
+        <h2>Personalized TV Show Suggestions</h2>
+        <h3 style="display: none" id="showsList"></h3>
 
     </div>
 </section>
@@ -380,6 +380,9 @@ document.getElementById('status').innerHTML = 'Please log ' +
         $.ajax(settings).done(function (response) {
             reqsTV = getTitles(response);
             console.log(reqsTV);
+            $('#showsList').show();
+            $('#showsList').text(reqsTV);
+
         });
 
         // var settings2 = {

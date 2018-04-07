@@ -26,10 +26,10 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../lvhacks/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+            <state relative-caret-position="240">
+              <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
               <folding>
-                <element signature="e#4699#4705#0" expanded="true" />
+                <element signature="e#3286#3292#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -179,12 +179,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1523054981927</updated>
-      <workItem from="1523054989737" duration="7864000" />
+      <workItem from="1523054989737" duration="7994000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7864000" />
+    <option name="totallyTimeSpent" value="7994000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="821" extended-state="6" />
@@ -248,10 +248,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../lvhacks/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+        <state relative-caret-position="240">
+          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
           <folding>
-            <element signature="e#4699#4705#0" expanded="true" />
+            <element signature="e#3286#3292#0" expanded="true" />
           </folding>
         </state>
       </provider>

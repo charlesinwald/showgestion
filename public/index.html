@@ -227,6 +227,42 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                         $('#loading').hide();
                                         let jung = response.interpretations[1].value;
                                         console.log(jung);
+                                        var titles = new Array();
+                                        switch (jung) {
+                                            case "ENFJ" :
+                                                titles = ["Friday Night Lights", "The Mindy Project", "Scandal", "Entourage", "Happy Endings"];
+                                            case "ENFP" :
+                                                titles = ["Sex and the City", "Freaks and Geeks", "Trailer Park Boys", "The Replacements"];
+                                            case "ENTJ" :
+                                                titles = ["Shark Tank", "The West Wing", "Silicon Valley", "House of Cards", "Suits"];
+                                            case "ENTP" :
+                                                titles = ["Star Trek", "Mad Men", "Real Time With Bill Maher", "It's Always Sunny in Philadelphia"];
+                                            case "ESFJ" :
+                                                titles = ["The Voice", "Project Runway", "How I Met Your Mother", "The Blacklist", "Glee"];
+                                            case "ESFP" :
+                                                titles = ["Family Guy", "Arrested Development", "Revenge", "Vampire Diaries", "American Dad!"];
+                                            case "ESTJ" :
+                                                titles = ["West Wing", "Glee", "Family Guy", "House of Cards", "The League"];
+                                            case "ESTP" :
+                                                titles = ["Law & Order", "Dexter", "The Walking Dead"];
+                                            case "INFJ" :
+                                                titles = ["Lost Girl", "Buffy the Vampire Slayer", "Battlestar Galactica", "The Colbert Report"];
+                                            case "INFP" :
+                                                titles = ["The Twilight Zone", "Twin Peaks", "Monty Python's Flying Circus", "Broad City"];
+                                            case "INTJ" :
+                                                titles = ["Orphan Black", "The Twilight Zone", "MythBusters", "Stargate"];
+                                            case "INTP" :
+                                                titles = ["Star Trek", "Sherlock", "Cowboy Bebop", "Farscape"];
+                                            case "ISFJ" :
+                                                titles = ["I Love Lucy", "Pushing Daisies", "Pawn Stars", "The Fresh Prince of Bel-Air", "Robot Chicken"];
+                                            case "ISFP" :
+                                                titles = ["Buffy the Vampire Slayer", "Misfits", "Regular Show", "Seinfeld"];
+                                            case "ISTJ" :
+                                                titles = ["Law & Order", "Scandal", "Parenthood", "NCIS", "Top Gear", "24", "The Simpsons"];
+                                            case "ISTP" :
+                                                titles = ["Supernatural", "Sherlock", "Orphan Black", "Archer", "Key and Peele"];
+
+                                        }
                                         tasteDivePrep();
                                     });
                                 });

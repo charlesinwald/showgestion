@@ -103,8 +103,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
     <div class="container" id="bottompart">
         <div class="loader" id="loading" style="display: none"></div>
 
-        <h1 style="display: none" id="type">Type</h1>
-        <h1>h1 test</h1>
+        <h1 style="display: none" id="type"></h1>
         <h2>h2 test</h2>
         <h3>h3 test</h3>
 
@@ -233,6 +232,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                         $('#loading').hide();
                                         let jung = response.interpretations[1].value;
                                         console.log(jung);
+                                        $('#type').show();
+                                        $('#type').text(jung);
                                         var titles = new Array();
                                         switch (jung) {
                                             case "ENFJ" :

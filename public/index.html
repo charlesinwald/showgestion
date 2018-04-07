@@ -353,7 +353,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
 
 
     }
-    function getReqs(var titles) {
+
+    function getReqs(titles) {
         var reqsTV;
         var reqsMovies;
         var reqs;
@@ -366,8 +367,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
                 "Cache-Control": "no-cache",
                 "Postman-Token": "47ec2f56-f978-4cc5-abfc-5cbd3cfc834e"
             }
-
-            $.ajax(settings).done(function (response) {
+        }
+        $.ajax(settings).done(function (response) {
             reqsTV = getTitles(response);
             console.log(reqsTV);
         });
@@ -381,8 +382,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
                 "Cache-Control": "no-cache",
                 "Postman-Token": "ee51aede-7c50-49ce-b13a-190839ef8cdb"
             }
-
-            $.ajax(settings2).done(function (response) {
+        }
+        $.ajax(settings2).done(function (response) {
             reqsMovies = getTitles(respones);
             console.log(reqsMovies);
         });
@@ -391,6 +392,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
         return reqs;
 
     }
+
     function concatTitlesUrl(titles) // this is an array
     {
         var i;

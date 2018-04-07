@@ -375,24 +375,25 @@ document.getElementById('status').innerHTML = 'Please log ' +
             console.log(reqsTV);
         });
 
-        var settings2 = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q=" + titles +"&type=movies&k=305019-LVHackPr-PVZ68QQB",
-            "method": "GET",
-            "headers": {
-                "origin": "",
-                "Cache-Control": "no-cache",
-                "Postman-Token": "ee51aede-7c50-49ce-b13a-190839ef8cdb",
-                "Access-Control-Allow-Origin": "*"
-            }
-        }
-        $.ajax(settings2).done(function (response2) {
-            reqsMovies = getTitles(response2);
-            console.log(reqsMovies);
-        });
+        // var settings2 = {
+        //     "async": true,
+        //     "crossDomain": true,
+        //     "url": "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q=" + titles +"&type=movies&k=305019-LVHackPr-PVZ68QQB",
+        //     "method": "GET",
+        //     "headers": {
+        //         "origin": "",
+        //         "Cache-Control": "no-cache",
+        //         "Postman-Token": "ee51aede-7c50-49ce-b13a-190839ef8cdb",
+        //         "Access-Control-Allow-Origin": "*"
+        //     }
+        // }
+        // $.ajax(settings2).done(function (response2) {
+        //     reqsMovies = getTitles(response2);
+        //     console.log(reqsMovies);
+        // });
 
-        var reqs = reqsTV + reqsMovies;
+        var reqs = reqsTV;
+        // + reqsMovies;
         return reqs;
 
     }

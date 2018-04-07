@@ -23,7 +23,11 @@
 
 </head>
 
-<body>
+<body onload="
+FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+    console.log('Facebook getLoginStatus reached');
+});">
 
 <script>
     window.fbAsyncInit = function () {
@@ -31,7 +35,7 @@
             appId: '187412542049724',
             cookie: true,
             xfbml: true,
-            version: '2.12'
+            version: 'v2.12'
         });
 
         FB.AppEvents.logPageView();

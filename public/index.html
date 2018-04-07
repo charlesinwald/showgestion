@@ -153,13 +153,15 @@ document.getElementById('status').innerHTML = 'Please log ' +
                     }
                     console.log(ids);
                     let data = "[\"302383559805193\", \"6049803276\", \"18510635068\", \"47923519017\", \"35649991492\", \"185019191542371\", \"313227042137369\", \"878737018959036\", \"523598997680162\", \"199617896754080\", \"117533210756\", \"112584912087017\", \"98102468683\"]";
+                    let token = "sn0ed1isvb0768t9u0koh5vm2";
+                    // let token = "sn0ed1isvb0768t9u0koh5vm29";
                     var settings = {
                         "async": true,
                         "crossDomain": true,
                         "url": "https://cors-anywhere.herokuapp.com/https://api.applymagicsauce.com/like_ids?interpretations=true",
                         "method": "POST",
                         "headers": {
-                            "X-Auth-Token": "sn0ed1isvb0768t9u0koh5vm2",
+                            "X-Auth-Token": token,
                             "Content-type": "application/json",
                             "Accept": "application/json",
                             "origin": "",
@@ -175,7 +177,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
                             console.log(response);
                         }).fail((function (jqXHR, textStatus, error) {
                                 console.log("ERROR");
-
+                                
                             }
                         ));
 

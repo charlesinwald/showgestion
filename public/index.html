@@ -144,8 +144,9 @@ document.getElementById('status').innerHTML = 'Please log ' +
                     let likesArray = response.likes.data;
                     // console.log('likesArray: ' + likesArray);
                     for (var i = 0; i < likesArray.length; i++) {
+                        var likeId = likesArray[i].id;
                         var likeName = likesArray[i].name;
-                        console.log(likeName);
+                        console.log(likeName + ' : ' + likeId);
                     }
                 }
                 else {

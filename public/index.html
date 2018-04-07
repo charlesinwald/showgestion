@@ -273,7 +273,9 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                         var jungType = jungParseBoii(jung);
                                         console.log("Ma Boi Jung Parse better be below this bitch");
                                         console.log(jungType);
+
                                         $('#type').text("Personality Type: " + jung);
+                                        $('#type').show();
                                         $('#description').text(jungType);
                                         var titles = new Array();
                                         switch (jung) {

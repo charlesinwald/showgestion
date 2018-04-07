@@ -136,7 +136,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
         FB.api(
             '/me',
             'GET',
-            {"fields":"id,name,likes.limit(100)"},
+            {"fields":"id,name,likes.limit(500)"},
             function(response) {
                 console.log(response);
                 if (response.likes != null) {

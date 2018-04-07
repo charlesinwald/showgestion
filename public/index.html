@@ -173,12 +173,15 @@ document.getElementById('status').innerHTML = 'Please log ' +
                         $.ajax(settings).done(function (response) {
                             if (response)
                             console.log(response);
-                        });
+                        }).fail((function (jqXHR, textStatus, error) {
+                                console.log("ERROR");
+
+                            }
+                        ));
 
                     }
                     catch (e) {
                         console.log(e);
-                        console.log("ERROR");
                     }
                 }
                 else {

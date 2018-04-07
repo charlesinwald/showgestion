@@ -33,6 +33,8 @@ FB.getLoginStatus(function(response) {
 if (response.status === 'connected') {
 // Logged into your app and Facebook.
     alert('Logged in');
+    statusChangeCallback(response);
+    console.log('Facebook getLoginStatus reached');
 }
 else {
 // The person is not logged into your app or we are unable to tell.
@@ -40,8 +42,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
 'into this app.';
 }
 
-statusChangeCallback(response);
-console.log('Facebook getLoginStatus reached');
+
 });">
 
 <script>

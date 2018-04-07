@@ -170,11 +170,16 @@ document.getElementById('status').innerHTML = 'Please log ' +
                     }
                     try {
                         $.ajax(settings).done(function (response) {
+                            if (response)
                             console.log(response);
                         });
+                        $.ajaxSetup({
+                            "error": function (XMLHttpRequest, textStatus, errorThrown) {
+                                alert(XMLHttpRequest + ' ' + textStatus + ' ' + errorThrown); //however you want
+                            }
+                    });
                     }
                     catch (e) {
-                        console.log("ERROR");
                         console.log(e);
                     }
                 }

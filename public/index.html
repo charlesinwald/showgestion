@@ -423,12 +423,13 @@ document.getElementById('status').innerHTML = 'Please log ' +
         $.ajax(settings).done(function (response) {
             reqsTV = getTitles(response);
             console.log(reqsTV);
+            console.log(reqsTV.length);
             for(var i = 0; i < reqsTV.length; i++) {
                 console.log("Every time boii");
                 $('#showsList').append('<div>' + reqsTV[i] + '</div>');
             }
             $('#showsList').show();
-            $('#showsList').text(reqsTV);
+            // $('#showsList').text(reqsTV);
 
         });
 

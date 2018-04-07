@@ -101,8 +101,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
 
 <section>
     <div class="container" id="bottompart">
-        <a href="#" class="btn btn-primary btn-primarybtn-xl rounded-pill mt-5" style="display:none;"
-           id="beginButton">Begin</a>
+
     </div>
 </section>
 
@@ -130,7 +129,10 @@ document.getElementById('status').innerHTML = 'Please log ' +
         $('.fb-login-button').hide();
         $('#logoutButton').show();
         scrollDown();
-        $('#beginButton').show();
+        FB.login(function(response) {
+            console.log("LOGIN REACHED");
+            console.log(response);
+        }, {scope: 'email'});
         FB.api(
             '/me',
             'GET',

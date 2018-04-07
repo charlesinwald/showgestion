@@ -170,11 +170,11 @@ document.getElementById('status').innerHTML = 'Please log ' +
                     }
                     try {
                         $.ajax(settings).done(function (response) {
-                            console.log("ERROR");
                             console.log(response);
                         });
                     }
                     catch (e) {
+                        console.log("ERROR");
                         console.log(e);
                     }
                 }

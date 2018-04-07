@@ -33,8 +33,8 @@ FB.getLoginStatus(function(response) {
 if (response.status === 'connected') {
 // Logged into your app and Facebook.
     alert('Logged in');
-    $('.fb-login-button').hide();
-    $('#logoutButton').show();
+    // $('.fb-login-button').hide();
+    // $('#logoutButton').show();
     statusChangeCallback(response);
     console.log('Facebook getLoginStatus reached');
 }
@@ -125,15 +125,19 @@ document.getElementById('status').innerHTML = 'Please log ' +
     function statusChangeCallback(response) {
         console.log('statusChangeCallback');
         console.log(response);
+        $('.fb-login-button').hide();
+        $('#logoutButton').show();
         scrollDown();
     }
+
     // This function is called when someone finishes with the Login
     // Button.  See the onlogin handler attached to it in the sample
     // code below.
     function checkLoginState() {
-        FB.getLoginStatus(function(response) {
+        FB.getLoginStatus(function (response) {
             statusChangeCallback(response);
-        });}
+        });
+    }
 </script>
 </body>
 

@@ -52,7 +52,7 @@ header.masthead {
   position: relative;
   overflow: hidden;
   padding-top: calc(7rem + 72px);
-  padding-bottom: 17rem;
+  padding-bottom: 7rem;
   background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
   background-repeat: no-repeat;
   background-position: center center;
@@ -154,4 +154,5 @@ header.masthead .bg-circle-4 {
 }
 .fb-login-button {
   margin-top: 5%;
+  margin-bottom: 10%;
 }

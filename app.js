@@ -19,24 +19,38 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.get('/magic', function (req, res) {
-    var request = require("request");
-
-    var options = { method: 'POST',
-        url: 'https://cors-anywhere.herokuapp.com/https://api.applymagicsauce.com/like_ids',
-        headers:
-            {
-                'Cache-Control': 'no-cache',
-                Accept: 'application/json',
-                'Content-type': 'application/json',
-                'X-Auth-Token': 'sn0ed1isvb0768t9u0koh5vm29' },
-        body: '["302383559805193", "6049803276", "18510635068", "47923519017", "35649991492", "185019191542371", "313227042137369", "878737018959036", "523598997680162", "199617896754080", "117533210756", "112584912087017", "98102468683"]' };
-
-    request(options, function (error, response, body) {
-        console.log(body);
-        if (error) throw new Error(error);
+    var http = require("https");
+    var options = {
+        "method": "POST",
+        "hostname": [
+            "api",
+            "applymagicsauce",
+            "com"
+        ],
+        "path": [
+            "like_ids"
+        ],
+        "headers": {
+            "X-Auth-Token": "sn0ed1isvb0768t9u0koh5vm29",
+            "Content-type": "application/json",
+            "Accept": "application/json",
+            "Cache-Control": "no-cache",
+            "Postman-Token": "66e8d55c-039a-42c0-a39a-f91772c31ebf"
+        }
+    };
+    var req = http.request(options, function (res) {
+        var chunks = [];
+        res.on("data", function (chunk) {
+            chunks.push(chunk);
+        });
+        res.on("end", function () {
+            var body = Buffer.concat(chunks);
+            console.log(body.toString());
+        });
     });
+    req.write("[\"302383559805193\", \"6049803276\", \"18510635068\", \"47923519017\", \"35649991492\", \"185019191542371\", \"313227042137369\", \"878737018959036\", \"523598997680162\", \"199617896754080\", \"117533210756\", \"112584912087017\", \"98102468683\"]");
+    req.end();
     res.send("hi!");
-
 })
 
 

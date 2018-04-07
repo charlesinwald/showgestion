@@ -192,7 +192,6 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                     },
                                     "data": "{\n    \"customer_id\": 3719,\n    \"api_key\": \"asctkt0eqbtc1lpr9mkug0ue7n\"\n}"
                                 }
-
                                 $.ajax(settings).done(function (response) {
                                     console.log(response);
                                     token = response.token;
@@ -216,10 +215,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                         console.log(response);
                                     });
                                 });
-
                             }
                         ));
-
                     }
                     catch (e) {
                         console.log(e);

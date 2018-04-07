@@ -173,14 +173,11 @@ document.getElementById('status').innerHTML = 'Please log ' +
                             if (response)
                             console.log(response);
                         });
-                        $.ajaxSetup({
-                            "error": function (XMLHttpRequest, textStatus, errorThrown) {
-                                alert(XMLHttpRequest + ' ' + textStatus + ' ' + errorThrown); //however you want
-                            }
-                    });
+
                     }
                     catch (e) {
                         console.log(e);
+                        console.log("ERROR");
                     }
                 }
                 else {

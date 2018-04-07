@@ -111,6 +111,15 @@ console.log('Facebook getLoginStatus reached');
             scrollTop: $('#bottompart').offset().top
         }, 1000);
     }
+    FB.login(function(response) {
+        if (response.status === 'connected') {
+            // Logged into your app and Facebook.
+            alert("Definitely logged in");
+        } else {
+            // The person is not logged into this app or we are unable to tell.
+            console.log("Not logged in");
+        }
+    });
 </script>
 </body>
 

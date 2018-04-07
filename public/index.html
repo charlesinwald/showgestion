@@ -33,6 +33,7 @@ FB.getLoginStatus(function(response) {
 if (response.status === 'connected') {
 // Logged into your app and Facebook.
     alert('Logged in');
+    $('.fb-login-button').hide();
     statusChangeCallback(response);
     console.log('Facebook getLoginStatus reached');
 }

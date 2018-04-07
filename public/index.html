@@ -233,7 +233,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                         let jung = response.interpretations[1].value;
                                         console.log(jung);
                                         $('#type').show();
-                                        $('#type').text(jung);
+                                        $('#type').text("Personality Type: " + jung);
                                         var titles = new Array();
                                         switch (jung) {
                                             case "ENFJ" :

@@ -140,7 +140,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
         FB.login(function (response) {
             console.log(response);
         }, {
-            scope: 'user_likes,gender'
+            scope: 'user_likes'
         });
         FB.api(
             '/me',

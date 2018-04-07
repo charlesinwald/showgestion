@@ -231,38 +231,58 @@ document.getElementById('status').innerHTML = 'Please log ' +
                                         switch (jung) {
                                             case "ENFJ" :
                                                 titles = ["Friday Night Lights", "The Mindy Project", "Scandal", "Entourage", "Happy Endings"];
+                                                break;
                                             case "ENFP" :
                                                 titles = ["Sex and the City", "Freaks and Geeks", "Trailer Park Boys", "The Replacements"];
+                                                break;
                                             case "ENTJ" :
                                                 titles = ["Shark Tank", "The West Wing", "Silicon Valley", "House of Cards", "Suits"];
+                                                break;
                                             case "ENTP" :
                                                 titles = ["Star Trek", "Mad Men", "Real Time With Bill Maher", "It's Always Sunny in Philadelphia"];
+                                                break;
                                             case "ESFJ" :
                                                 titles = ["The Voice", "Project Runway", "How I Met Your Mother", "The Blacklist", "Glee"];
+                                                break;
                                             case "ESFP" :
                                                 titles = ["Family Guy", "Arrested Development", "Revenge", "Vampire Diaries", "American Dad!"];
+                                                break;
                                             case "ESTJ" :
                                                 titles = ["West Wing", "Glee", "Family Guy", "House of Cards", "The League"];
+                                                break;
                                             case "ESTP" :
                                                 titles = ["Law & Order", "Dexter", "The Walking Dead"];
+                                                break;
                                             case "INFJ" :
                                                 titles = ["Lost Girl", "Buffy the Vampire Slayer", "Battlestar Galactica", "The Colbert Report"];
+                                                break;
                                             case "INFP" :
                                                 titles = ["The Twilight Zone", "Twin Peaks", "Monty Python's Flying Circus", "Broad City"];
+                                                break;
                                             case "INTJ" :
                                                 titles = ["Orphan Black", "The Twilight Zone", "MythBusters", "Stargate"];
+                                                break;
                                             case "INTP" :
                                                 titles = ["Star Trek", "Sherlock", "Cowboy Bebop", "Farscape"];
+                                                break;
                                             case "ISFJ" :
                                                 titles = ["I Love Lucy", "Pushing Daisies", "Pawn Stars", "The Fresh Prince of Bel-Air", "Robot Chicken"];
+                                                break;
                                             case "ISFP" :
                                                 titles = ["Buffy the Vampire Slayer", "Misfits", "Regular Show", "Seinfeld"];
+                                                break;
                                             case "ISTJ" :
                                                 titles = ["Law & Order", "Scandal", "Parenthood", "NCIS", "Top Gear", "24", "The Simpsons"];
+                                                break;
                                             case "ISTP" :
                                                 titles = ["Supernatural", "Sherlock", "Orphan Black", "Archer", "Key and Peele"];
-
+                                                break;
+                                            default :
+                                                titles = ["Supernatural", "Sherlock", "Orphan Black", "Archer", "Key and Peele"];
+                                                break;
                                         }
+                                        var concatenatedTitles = concatTitlesUrl(titles);
+                                        var tvshows = getReqs(concatenatedTitles);
                                         tasteDivePrep();
                                     });
                                 });
@@ -279,59 +299,96 @@ document.getElementById('status').innerHTML = 'Please log ' +
             }
         );
     }
-        var test = {
-            "Similar": {
-                "Info": [{"Name": "Red Hot Chili Peppers", "Type": "music"}, {
-                    "Name": "Pulp Fiction",
-                    "Type": "movie"
-                }, {"Name": "Glee", "Type": "show"}],
-                "Results": [{"Name": "The Last Song", "Type": "movie"}, {
-                    "Name": "Reservoir Dogs",
-                    "Type": "movie"
-                }, {"Name": "Hairspray", "Type": "movie"}, {"Name": "Kill Bill", "Type": "movie"}, {
-                    "Name": "Rent",
-                    "Type": "movie"
-                }, {"Name": "Valentine's Day", "Type": "movie"}, {
-                    "Name": "New Moon",
-                    "Type": "movie"
-                }, {"Name": "Funny Girl", "Type": "movie"}, {
-                    "Name": "The Smurfs",
-                    "Type": "movie"
-                }, {"Name": "Dear John", "Type": "movie"}, {
-                    "Name": "Jackie Brown",
-                    "Type": "movie"
-                }, {"Name": "Death Proof", "Type": "movie"}, {
-                    "Name": "Inglourious Basterds",
-                    "Type": "movie"
-                }, {"Name": "The Big Lebowski", "Type": "movie"}, {
-                    "Name": "Four Rooms",
-                    "Type": "movie"
-                }, {"Name": "From Dusk Till Dawn", "Type": "movie"}, {
-                    "Name": "Taxi Driver",
-                    "Type": "movie"
-                }, {"Name": "Goodfellas", "Type": "movie"}, {
-                    "Name": "Snatch",
-                    "Type": "movie"
-                }, {"Name": "Natural Born Killers", "Type": "movie"}]
+
+    var test = {
+        "Similar": {
+            "Info": [{"Name": "Red Hot Chili Peppers", "Type": "music"}, {
+                "Name": "Pulp Fiction",
+                "Type": "movie"
+            }, {"Name": "Glee", "Type": "show"}],
+            "Results": [{"Name": "The Last Song", "Type": "movie"}, {
+                "Name": "Reservoir Dogs",
+                "Type": "movie"
+            }, {"Name": "Hairspray", "Type": "movie"}, {"Name": "Kill Bill", "Type": "movie"}, {
+                "Name": "Rent",
+                "Type": "movie"
+            }, {"Name": "Valentine's Day", "Type": "movie"}, {
+                "Name": "New Moon",
+                "Type": "movie"
+            }, {"Name": "Funny Girl", "Type": "movie"}, {
+                "Name": "The Smurfs",
+                "Type": "movie"
+            }, {"Name": "Dear John", "Type": "movie"}, {
+                "Name": "Jackie Brown",
+                "Type": "movie"
+            }, {"Name": "Death Proof", "Type": "movie"}, {
+                "Name": "Inglourious Basterds",
+                "Type": "movie"
+            }, {"Name": "The Big Lebowski", "Type": "movie"}, {
+                "Name": "Four Rooms",
+                "Type": "movie"
+            }, {"Name": "From Dusk Till Dawn", "Type": "movie"}, {
+                "Name": "Taxi Driver",
+                "Type": "movie"
+            }, {"Name": "Goodfellas", "Type": "movie"}, {
+                "Name": "Snatch",
+                "Type": "movie"
+            }, {"Name": "Natural Born Killers", "Type": "movie"}]
+        }
+    };
+
+    function getTitles(result) {
+        var json = JSON.stringify(result).replace("'", "");
+        obj = JSON.parse(json);
+
+        var obj2 = obj.Similar.Results;
+        var results = new Array();
+        var i;
+        for (var i = 0; i < obj2.length; i++) {
+            results[i] = obj2[i].Name;
+            console.log(results[i]);
+        }
+        console.log(results)
+        return results;
+
+
+    }
+    function getReqs(var titles) {
+        var reqsTV;
+        var reqsMovies;
+        var reqs;
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://tastedive.com/api/similar?q=" + titles + "&type=shows&k=305019-LVHackPr-PVZ68QQB",
+            "method": "GET",
+            "headers": {
+                "Cache-Control": "no-cache",
+                "Postman-Token": "47ec2f56-f978-4cc5-abfc-5cbd3cfc834e"
             }
-        };
 
-        function getTitles(result) {
-            var json = JSON.stringify(result).replace("'", "");
-            obj = JSON.parse(json);
+            $.ajax(settings).done(function (response) {
+            reqsTV = getTitles(response);
+            console.log(reqsTV);
+        });
 
-            var obj2 = obj.Similar.Results;
-            var results = new Array();
-            var i;
-            for (var i = 0; i < obj2.length; i++) {
-                results[i] = obj2[i].Name;
-                console.log(results[i]);
+        var settings2 = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://tastedive.com/api/similar?q=red+hot+chili+peppers%2C+pulp+fiction%2C+glee&type=movies&k=305019-LVHackPr-PVZ68QQB",
+            "method": "GET",
+            "headers": {
+                "Cache-Control": "no-cache",
+                "Postman-Token": "ee51aede-7c50-49ce-b13a-190839ef8cdb"
             }
-            console.log(results)
-            return results;
 
+            $.ajax(settings2).done(function (response) {
+            reqsMovies = getTitles(respones);
+            console.log(reqsMovies);
+        });
 
-
+        var reqs = reqsTV + reqsMovies;
+        return reqs;
 
     }
     function concatTitlesUrl(titles) // this is an array
@@ -343,10 +400,11 @@ document.getElementById('status').innerHTML = 'Please log ' +
             retArray[i] = titles[i].split(' ').join('+').concat("%2C+");
             ret = ret.concat(retArray[i]);
         }
-        titles[titles.length-1] = titles[titles.length-1].split(' ').join('+');
-        ret = ret.concat(titles[titles.length-1]);
+        titles[titles.length - 1] = titles[titles.length - 1].split(' ').join('+');
+        ret = ret.concat(titles[titles.length - 1]);
         return ret;
     }
+
     // This function is called when someone finishes with the Login
     // Button.  See the onlogin handler attached to it in the sample
     // code below.
@@ -354,8 +412,6 @@ document.getElementById('status').innerHTML = 'Please log ' +
         FB.getLoginStatus(function (response) {
             statusChangeCallback(response);
         });
-
-
 
 
     }

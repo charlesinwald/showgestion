@@ -424,7 +424,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
             reqsTV = getTitles(response);
             console.log(reqsTV);
             for(var i = 0; i < reqsTV.length; i++) {
-                $('#showsList').append('<div>' + elementBoii + '</div>');
+                $('#showsList').append('<div>' + reqsTV[i] + '</div>');
             }
 
             $('#showsList').show();

@@ -141,7 +141,12 @@ document.getElementById('status').innerHTML = 'Please log ' +
                 console.log(response);
                 if (response.likes != null) {
                     console.log("WE GOT THE LIKES");
-                    console.log(response.likes.data);
+                    let likesArray = response.likes.data;
+                    console.log('likesArray: ' + likesArray);
+                    for (var i = 0; i < likesArray.length; i++) {
+                        var likeName = likesArray[i].name;
+                        console.log(likeName);
+                    }
                 }
                 else {
                     console.log("fuck this");

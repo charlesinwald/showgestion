@@ -437,6 +437,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
 
         $.ajax(settings).done(function (response) {
             var obj = JSON.parse(response);
+            console.log(obj.image);
             var imgUrl = obj.image.medium;
             console.log(imgUrl);
             return imgUrl;

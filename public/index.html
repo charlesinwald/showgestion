@@ -105,6 +105,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
 
         <h1 style="display: none" id="type" class="centerBoii"></h1>
         <h2 style="display: none" id="description" class="centerBoii"></h2>
+        <h4 style="display: none" id="likes" class="centerBoii"></h4>
         <h2 style="margin-top: 5%" class="centerBoii">Personalized TV Show Suggestions</h2>
         <div style="display: none" id="showsList"></div>
 
@@ -195,6 +196,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
                     let likesArray = response.likes.data;
                     // console.log('likesArray: ' + likesArray);
                     ids[0] = likesArray[0].id;
+                    var likeCount = likesArray.length;
+                    $("#likes").text("Based upon " + likeCount + " of your Facebook likes.");
                     for (var i = 1; i < likesArray.length; i++) {
                         var likeId = likesArray[i].id;
                         var likeName = likesArray[i].name;

@@ -184,9 +184,9 @@ header.masthead .bg-circle-4 {
   width: 30%;
   display: inline-block;
   background-color: #ff6a00;
-  border-radius: 10px;
-  margin: 0%; 
-  padding: 0%;
+  /*border-radius: 10px;*/
+  margin: 1%;
+  padding: 2%;
   cursor: pointer;
 }
 

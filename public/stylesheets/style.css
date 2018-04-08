@@ -179,4 +179,6 @@ header.masthead .bg-circle-4 {
 .showDiv {
   color: black;
   background-color: #ff6a00;
+  border-radius: 2px;
+  margin: 1%;
 }

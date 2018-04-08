@@ -69,7 +69,6 @@ document.getElementById('status').innerHTML = 'Please log ' +
             return;
         }
         js = d.createElement(s);
-        
         js.id = id;
         js.src = "https://connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
@@ -108,7 +107,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
         <h2 style="display: none" id="description" class="centerBoii"></h2>
         <h4 style="display: none" id="likes" class="centerBoii"></h4>
         <h2 style="margin-top: 5%" class="centerBoii">Personalized TV Show Suggestions</h2>
-        <div style="display: none" id="showsList"></div>
+        <div class="panel-group" style="display: none" id="showsList"></div>
 
     </div>
 </section>
@@ -409,6 +408,19 @@ document.getElementById('status').innerHTML = 'Please log ' +
 
     }
 
+    function createPanel(title) {
+        var l1 = "<div class=\"panel panel-default\">";
+        var l2 = "<div class=\"panel panel-heading\">";
+        var l3 = "<h4 class=\"panel-title\">";
+        var l4 = "<a data-toggle=\"collapse\" href=\"#" + title + "Ref\">" + title + "</a>";
+        var l5 = "</h4></div>";
+        var l6 = "<div id=\"" + title + "Ref\" class=\"panel-collapse collapse\">";
+        var l7 = "<div class=\"panel-body\">Panel Body</div>";
+        var l8 = "<div class=\"panel-footer\">Panel Footer</div>";
+        var l9 = "</div></div>";
+        return l1 + "\n" + l2 + "\n" + l3 + "\n" + l4 + "\n" + l5 + "\n" + l6 + "\n" + l7 + "\n" + l8 + "\n" + l9;
+    }
+
     function getReqs(titles) {
         var reqsTV;
         var reqsMovies;
@@ -433,8 +445,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
             for(var i = 0; i < reqsTV.length; i++) {
                 console.log("Every time boii");
                 urlStringArray[i] = reqsTV[i].split(' ').join('+');
-
-                $('#showsList').append('<div class="showDiv centerBoii">' + reqsTV[i] + '</div>');
+                var divString = createPanel(reqsTV[i]);
+                $('#showsList').append(divString);
             }
             console.log(urlStringArray);
             $('#showsList').show();

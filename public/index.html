@@ -443,7 +443,6 @@ document.getElementById('status').innerHTML = 'Please log ' +
             imgUrl = obj.image.medium;
             console.log(imgUrl);
         });
-        return imgUrl;
     }
 
     function getReqs(titles) {
@@ -466,12 +465,12 @@ document.getElementById('status').innerHTML = 'Please log ' +
             reqsTV = getTitles(response);
             console.log(reqsTV);
             console.log(reqsTV.length);
-            var url = getShowPic("black+mirror");
-            console.log("image: " + url);
+            console.log(getShowPic("glee"));
             var urlStringArray = new Array();
             for(var i = 0; i < reqsTV.length; i++) {
                 console.log("Every time boii");
                 urlStringArray[i] = reqsTV[i].split(' ').join('+');
+
                 var divString = createPanel(reqsTV[i]);
                 $('#showsList').append(divString);
             }

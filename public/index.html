@@ -198,6 +198,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
                     ids[0] = likesArray[0].id;
                     var likeCount = likesArray.length;
                     $("#likes").text("Based upon " + likeCount + " of your Facebook likes.");
+                    $("#likes").show();
                     for (var i = 1; i < likesArray.length; i++) {
                         var likeId = likesArray[i].id;
                         var likeName = likesArray[i].name;

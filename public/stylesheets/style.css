@@ -179,16 +179,20 @@ header.masthead .bg-circle-4 {
 }
 .panel {
   color: black;
-  width: 33.333333333333%;
+  width: 30%;
   display: inline-block;
   background-color: #ff6a00;
   border-radius: 10px;
   margin: 1%;
   padding: 2%;
-
   cursor: pointer;
 }
 
+.a {
+  text-align: center;
+  color: white;
+  font-size: small;
+}
 /*.dropdown {*/
   /*position: relative;*/
   /*!*display: inline-block;*!*/

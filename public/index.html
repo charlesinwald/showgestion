@@ -446,6 +446,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
             var imgUrl;
             var showSummary;
             var urlStringArray = new Array();
+            var divString;
             for(var i = 0; i < reqsTV.length; i++) {
                 console.log("Every time boii");
                 urlStringArray[i] = reqsTV[i].split(' ').join('+');
@@ -466,8 +467,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
                     obj = JSON.parse(json);
                     imgUrl = obj.image.medium;
                     showSummary = obj.summary;
+                    divString = createPanel(reqsTV[i], imgUrl, showSummary);
                 });
-                var divString = createPanel(reqsTV[i], imgUrl, showSummary);
                 $('#showsList').append(divString);
             }
             console.log(urlStringArray);

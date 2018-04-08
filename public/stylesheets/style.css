@@ -182,7 +182,7 @@ header.masthead .bg-circle-4 {
   align-content: center;
   color: black;
   width: 30%;
-  display: inline;
+  display: inline-block;
   background-color: #ff6a00;
   border-radius: 10px;
   margin: 1%;

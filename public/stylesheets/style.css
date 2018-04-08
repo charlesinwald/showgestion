@@ -179,12 +179,12 @@ header.masthead .bg-circle-4 {
 }
 .panel {
   color: black;
-  width: 30%;
+  width: 210px;
   display: inline-block;
   background-color: #ff6a00;
   border-radius: 10px;
   margin: 1%;
-  padding: 5%;
+  padding: 2%;
 
   cursor: pointer;
 }

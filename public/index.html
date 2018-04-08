@@ -421,31 +421,6 @@ document.getElementById('status').innerHTML = 'Please log ' +
         return l1 + "\n" + l2 + "\n" + l3 + "\n" + l4 + "\n" + l5 + "\n" + l6 + "\n" + l7 + "\n" + l8 + "\n" + l9;
     }
 
-    function getShowPic(title) {
-        var imgUrl;
-
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://cors-anywhere.herokuapp.com/https://api.tvmaze.com/singlesearch/shows?q=" + title,
-            "method": "GET",
-            "headers": {
-                "Cache-Control": "no-cache",
-                "origin": "",
-                "Postman-Token": "3c7c38e8-05e9-4f31-9437-0107b041c14c",
-                "Access-Control-Allow-Origin": "*"
-            }
-        }
-
-        $.ajax(settings).done(function (response) {
-            var json = JSON.stringify(response);
-            obj = JSON.parse(json);
-            imgUrl = obj.image.medium;
-            console.log(imgUrl);
-            return response;
-        });
-    }
-
     function getReqs(titles) {
         var reqsTV;
         var reqsMovies;
@@ -467,6 +442,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
             console.log(reqsTV);
             console.log(reqsTV.length);
             var imgUrl;
+            var showSummary;
             var urlStringArray = new Array();
             for(var i = 0; i < reqsTV.length; i++) {
                 console.log("Every time boii");
@@ -487,7 +463,9 @@ document.getElementById('status').innerHTML = 'Please log ' +
                     var json = JSON.stringify(response);
                     obj = JSON.parse(json);
                     imgUrl = obj.image.medium;
+                    showSummary = obj.summary;
                     console.log(imgUrl);
+                    console.log(showSummary);
                 });
                 var divString = createPanel(reqsTV[i]);
                 $('#showsList').append(divString);

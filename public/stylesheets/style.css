@@ -179,6 +179,7 @@ header.masthead .bg-circle-4 {
 }
 .panel {
   color: black;
+  width: 30%;
   background-color: #ff6a00;
   border-radius: 10px;
   margin: 1%;

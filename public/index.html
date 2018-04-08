@@ -428,8 +428,10 @@ document.getElementById('status').innerHTML = 'Please log ' +
             reqsTV = getTitles(response);
             console.log(reqsTV);
             console.log(reqsTV.length);
+            var urlStringArray = new Array();
             for(var i = 0; i < reqsTV.length; i++) {
                 console.log("Every time boii");
+                urlStringArray[i] = reqsTV[i].split(' ').join('+');
                 $('#showsList').append('<div class="showDiv centerBoii">' + reqsTV[i] + '</div>');
             }
             $('#showsList').show();

@@ -466,10 +466,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
                     obj = JSON.parse(json);
                     imgUrl = obj.image.medium;
                     showSummary = obj.summary;
-                    console.log(imgUrl);
-                    console.log(showSummary);
                 });
-                var divString = createPanel(reqsTV[i]);
+                var divString = createPanel(reqsTV[i], imgUrl, showSummary);
                 $('#showsList').append(divString);
             }
             console.log(urlStringArray);

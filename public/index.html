@@ -466,12 +466,29 @@ document.getElementById('status').innerHTML = 'Please log ' +
             reqsTV = getTitles(response);
             console.log(reqsTV);
             console.log(reqsTV.length);
-            console.log(getShowPic("glee"));
+            var imgUrl;
             var urlStringArray = new Array();
             for(var i = 0; i < reqsTV.length; i++) {
                 console.log("Every time boii");
                 urlStringArray[i] = reqsTV[i].split(' ').join('+');
-
+                var settings3 = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://cors-anywhere.herokuapp.com/https://api.tvmaze.com/singlesearch/shows?q=" + title,
+                    "method": "GET",
+                    "headers": {
+                        "Cache-Control": "no-cache",
+                        "origin": "",
+                        "Postman-Token": "3c7c38e8-05e9-4f31-9437-0107b041c14c",
+                        "Access-Control-Allow-Origin": "*"
+                    }
+                }
+                $.ajax(settings3).done(function (response) {
+                    var json = JSON.stringify(response);
+                    obj = JSON.parse(json);
+                    imgUrl = obj.image.medium;
+                    console.log(imgUrl);
+                });
                 var divString = createPanel(reqsTV[i]);
                 $('#showsList').append(divString);
             }

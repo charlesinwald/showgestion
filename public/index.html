@@ -422,6 +422,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
     }
 
     function getShowPic() {
+        var imgUrl;
+
         var settings = {
             "async": true,
             "crossDomain": true,
@@ -438,10 +440,10 @@ document.getElementById('status').innerHTML = 'Please log ' +
         $.ajax(settings).done(function (response) {
             var json = JSON.stringify(response);
             obj = JSON.parse(json);
-            var imgUrl = obj.image.medium;
+            imgUrl = obj.image.medium;
             console.log(imgUrl);
-            return imgUrl;
         });
+        return imgUrl;
     }
 
     function getReqs(titles) {

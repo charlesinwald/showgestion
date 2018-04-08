@@ -447,6 +447,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
             var showSummary;
             var urlStringArray = new Array();
             var divString;
+            var showTitle;
             var i;
             for(i = 0; i < reqsTV.length; i++) {
                 console.log(reqsTV[i]);
@@ -468,7 +469,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
                     obj = JSON.parse(json);
                     imgUrl = obj.image.medium;
                     showSummary = obj.summary;
-                    divString = createPanel(reqsTV[i], imgUrl, showSummary);
+                    showTitle = obj.name;
+                    divString = createPanel(showTitle, imgUrl, showSummary);
                     $('#showsList').append(divString);
                 });
 

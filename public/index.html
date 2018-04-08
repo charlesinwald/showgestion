@@ -447,7 +447,8 @@ document.getElementById('status').innerHTML = 'Please log ' +
             var showSummary;
             var urlStringArray = new Array();
             var divString;
-            for(var i = 0; i < reqsTV.length; i++) {
+            var i;
+            for(i = 0; i < reqsTV.length; i++) {
                 console.log(reqsTV[i]);
                 urlStringArray[i] = reqsTV[i].split(' ').join('+');
                 var settings3 = {

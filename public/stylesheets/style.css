@@ -178,6 +178,8 @@ header.masthead .bg-circle-4 {
   text-align: center;
 }
 .panel {
+  text-align: center;
+  align-content: center;
   color: black;
   width: 30%;
   display: inline-block;
@@ -191,7 +193,7 @@ header.masthead .bg-circle-4 {
 a {
   text-align: center;
   color: white;
-  font-size: small;
+  font-size: medium;
 }
 /*.dropdown {*/
   /*position: relative;*/

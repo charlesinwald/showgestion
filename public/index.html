@@ -437,6 +437,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
             var obj = JSON.parse(response);
             var imgUrl = obj.image.medium;
             console.log(imgUrl);
+            return imgUrl;
         });
     }
 
@@ -460,7 +461,7 @@ document.getElementById('status').innerHTML = 'Please log ' +
             reqsTV = getTitles(response);
             console.log(reqsTV);
             console.log(reqsTV.length);
-            getShowPic();
+            console.log("Image: " + getShowPic());
             var urlStringArray = new Array();
             for(var i = 0; i < reqsTV.length; i++) {
                 console.log("Every time boii");

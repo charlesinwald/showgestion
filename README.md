@@ -1,2 +1,2 @@
 # showgestion
-https://showgestion.herokuapp.com
+https://lvhacks.herokuapp.com
